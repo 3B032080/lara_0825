@@ -15,10 +15,10 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    Post::create([
-        'title'=>'testtitle',
-        'content'=>'testcontent',
-    ]);
+    $post = Post::find(1);
+    echo '標題：'.$post->title.'<br>';
+    echo '內容：'.$post->content.'<br>';
+    dd($post);
         
     return view('welcome');
 });
