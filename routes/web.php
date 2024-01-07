@@ -15,7 +15,7 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    $posts = Post::all();
+    $posts = Post::where('id','<',10)->orderBy('id','DESC')->get();
     foreach($posts as $post){
         echo '編號：'.$post->id.'<br>';
         echo '標題：'.$post->title.'<br>';
