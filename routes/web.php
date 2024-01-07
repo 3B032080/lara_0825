@@ -15,7 +15,7 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    $fourthPost  =  Post::find(4); 
-    dd($fourthPost); 
+    $lastPost  =  Post::orderBy('id',  'DESC')->first(); 
+    dd($lastPost); 
     return view('welcome');
 });
