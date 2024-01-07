@@ -15,7 +15,7 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    $allPosts  =  Post::all(); 
-    dd($allPosts); 
+    $featuredPosts  =  Post::where('is_feature',  1)->get(); 
+    dd($featuredPosts); 
     return view('welcome');
 });
