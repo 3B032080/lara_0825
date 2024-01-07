@@ -15,15 +15,11 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    $posts = Post::where('id','<',10)->orderBy('id','DESC')->get();
-    foreach($posts as $post){
-        echo '編號：'.$post->id.'<br>';
-        echo '標題：'.$post->title.'<br>';
-        echo '內容：'.$post->content.'<br>';
-        echo '張貼時間：'.$post->created_at.'<br>';
-        echo '----------------------------------'.'<br>';
-    }    
-    dd($posts);
+    $post=Post::find(1);
+    $post->update([
+        'title'=>'updatedtitle',
+        'content'=>'updatedcontent',
+    ]);
         
     return view('welcome');
 });
