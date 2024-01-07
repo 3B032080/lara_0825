@@ -16,10 +16,9 @@ use App\Models\Post;
 
 Route::get('/', function () {
     $post=Post::find(1);
-    $post->update([
-        'title'=>'updatedtitle',
-        'content'=>'updatedcontent',
-    ]);
+    $post->title ='savedtitle';
+    $post->content ='savedcontent';
+    $post->save();
         
     return view('welcome');
 });
