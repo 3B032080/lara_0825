@@ -15,10 +15,6 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    $post=Post::find(1);
-    $post->title ='savedtitle';
-    $post->content ='savedcontent';
-    $post->save();
-        
+    Post::destroy(3,  5,  7);
     return view('welcome');
 });
