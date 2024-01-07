@@ -15,6 +15,7 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    Post::destroy(3,  5,  7);
+    $allPosts  =  Post::all(); 
+    dd($allPosts); 
     return view('welcome');
 });
