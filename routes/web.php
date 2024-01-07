@@ -15,7 +15,7 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    $featuredPosts  =  Post::where('is_feature',  1)->get(); 
-    dd($featuredPosts); 
+    $fourthPost  =  Post::find(4); 
+    dd($fourthPost); 
     return view('welcome');
 });
